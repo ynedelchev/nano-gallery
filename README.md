@@ -47,6 +47,11 @@ Installation
    `http://localhost/nano-gallery`
 
  - Do not forget to rerun `update.sh` each time when you add a new Photo album under `albums` directory.
+
+Sample
+------
+
+See a sample of how it looks like here: [http://bgkalendar.com/gallery/](http://bgkalendar.com/gallery/)
   
 
  Enjoy
