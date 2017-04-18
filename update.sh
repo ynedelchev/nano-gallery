@@ -9,7 +9,10 @@ cd "$CUR"
 
 cd "$DIR/albums"
 for d in * ; do
-    echo "Copying $d"
-    cp "$DIR/album.php" "$DIR/albums/$d/index.php"
+    if [ -d "$d" ] 
+    then
+       echo "Copying $d"
+       cp "$DIR/album.php" "$DIR/albums/$d/index.php"
+    fi
 done
 cd "$CUR"
