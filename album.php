@@ -115,18 +115,35 @@ if ($handle = opendir(__DIR__)) {
 
         <div class="image">
         <a href="<?php echo $entry;?>" class="image">
-<?php if (file_exists($thumbs.'/'.$name.'.png')) { ?>
-           <img src="<?php echo 'thumbs/'.$name.'.png';?>" class="image"/><br/>
-<?php } else { ?> 
-<?php      $thumbsfor[$entry] = $name; ?>
-           <img src="<?php echo $entry;?>" class="image"/><br/>
-<?php } ?> 
-            <?php echo "$entry"; ?>
+           <?php if (file_exists($thumbs.'/'.$name.'.png')) { ?>
+             <img src="<?php echo 'thumbs/'.$name.'.png';?>" class="image"/><br/>
+           <?php } else { ?> 
+             <?php      $thumbsfor[$entry] = $name; ?>
+               <img src="<?php echo $entry;?>" class="image"/><br/>
+           <?php } ?>
+           <?php echo "$entry"; ?>
         </a>
         </div>
         <br/>
         <br/>
 
+<?php
+        } else if ($entry != 'album.png' && ( $ext == 'mp4' || $ext == 'ogg' || $ext == 'webm' || $ext == 'mts' || $ext == 'ogv' )) {
+          $isempty = false;
+          $format = ($ext == 'ogv') ? 'ogg' : $ext;
+?>
+        <div class="image">
+           <video controls="true">
+             <source src="<?php echo $entry;?>" type="video/<?php echo $format;?>"/>
+             <a name="<?php echo $name;?>" href="<?php echo $entry;?>">
+               <src img="../../video.png" alt="<?php echo $name;?>"/>
+             </a>
+           </video>
+           <br/>
+           <a name="nm<?php echo $name;?>" href="<?php echo $entry;?>"><?php echo "$entry"; ?></a>
+        </div>
+        <br/>
+        <br/>
 <?php
         }
     }
