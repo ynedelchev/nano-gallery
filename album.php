@@ -133,7 +133,7 @@ if ($handle = opendir(__DIR__)) {
           $format = ($ext == 'ogv') ? 'ogg' : $ext;
 ?>
         <div class="image">
-           <video controls="true">
+           <video width="320" controls="true">
              <source src="<?php echo $entry;?>" type="video/<?php echo $format;?>"/>
              <a name="<?php echo $name;?>" href="<?php echo $entry;?>">
                <src img="../../video.png" alt="<?php echo $name;?>"/>
