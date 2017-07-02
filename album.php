@@ -133,10 +133,10 @@ if ($handle = opendir(__DIR__)) {
           $format = ($ext == 'ogv') ? 'ogg' : $ext;
 ?>
         <div class="image">
-           <video width="320" controls="true">
+           <video width="360" controls="true">
              <source src="<?php echo $entry;?>" type="video/<?php echo $format;?>"/>
              <a name="<?php echo $name;?>" href="<?php echo $entry;?>">
-               <src img="../../video.png" alt="<?php echo $name;?>"/>
+               <img src="../../video.png" alt="<?php echo $name;?>"/>
              </a>
            </video>
            <br/>
@@ -153,6 +153,8 @@ if ($handle = opendir(__DIR__)) {
 <?php if ($isempty) {?>
     Галерията е празна
 <?php } ?>
+</body>
+</html>
 <?php
 foreach ($thumbsfor as $entry => $name) {
     if (!makeThumb($thumbs, __DIR__.'/'.$entry, $name, 1024, 700)) {
@@ -160,6 +162,4 @@ foreach ($thumbsfor as $entry => $name) {
     }
 }
 ?>
-</body>
-</html>
 
