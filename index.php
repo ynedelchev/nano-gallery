@@ -40,7 +40,7 @@ if ($handle = opendir(__DIR__ . '/albums')) {
 
 <div class="album">
   <a href="albums/<?php echo $entry;?>" class="album">
-     <img src="images/album.png" class="album"/><br/>
+     <img src="images/album.png" class="album" width="100" /><br/>
      <?php echo "$entry"; ?>
   </a>
 </div>
